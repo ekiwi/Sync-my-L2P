@@ -43,19 +43,19 @@ LoginTester::LoginTester(QString username,
 
     QFile cert(":/certs/l2p");
     cert.open(QFile::ReadOnly);
-    QList<QSslCertificate> newCertificates = QSslCertificate::fromData(cert.readAll(),QSsl::Der);
+    QList<QSslCertificate> newCertificates = QSslCertificate::fromData(cert.readAll(),QSsl::Pem);
     cert.close();
     QSslCertificate newCertificate = newCertificates.first();
 
     QFile cert2(":/certs/utn");
     cert2.open(QFile::ReadOnly);
-    QList<QSslCertificate> newCertificates2 = QSslCertificate::fromData(cert2.readAll(),QSsl::Der);
+    QList<QSslCertificate> newCertificates2 = QSslCertificate::fromData(cert2.readAll(),QSsl::Pem);
     cert2.close();
     QSslCertificate newCertificate2 = newCertificates2.first();
 
     QFile cert3(":/certs/ssl");
     cert3.open(QFile::ReadOnly);
-    QList<QSslCertificate> newCertificates3 = QSslCertificate::fromData(cert3.readAll(),QSsl::Der);
+    QList<QSslCertificate> newCertificates3 = QSslCertificate::fromData(cert3.readAll(),QSsl::Pem);
     cert3.close();
     QSslCertificate newCertificate3 = newCertificates3.first();
 
